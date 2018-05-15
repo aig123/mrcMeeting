@@ -13,68 +13,68 @@
       return {
         menu:[
           {
-            path: "/home/use",
+            path: "/meet/use",
             title: "会议室使用",
             icon:"el-icon-news",
             children: [
               {
-                path: '/home/meetingApply',
+                path: '/meet/apply',
                 title: "发起会议",
                 icon: "el-icon-edit-outline",
               },
               {
-                path: '/home/myMeetingManager',
+                path: '/meet/myManager',
                 title: "我的会议管理",
                 icon: "el-icon-edit-outline",
               },
               {
-                path: '/home/meetingInfo',
+                path: '/meet/appointment',
                 title: "会议室预约查询",
                 icon: "el-icon-edit-outline",
               }
             ]
           },
           {
-            path: "/home/manage",
+            path: "/meet/manage",
             title: "会议室管理",
             icon:"el-icon-news",
             children: [
               {
-                path: '/home/meetingApproval',
+                path: '/meet/approval',
                 title: "会议审批",
                 icon: "el-icon-edit-outline",
               },
               {
-                path: '/home/meetingRoomManager',
+                path: '/meet/roomManager',
                 title: "会议室管理",
                 icon: "el-icon-edit-outline",
               }
             ]
           },
           {
-            path: "/home/yiti",
+            path: "/meet/yiti",
             title: "会议及议题管理",
             icon:"el-icon-news",
             children: [
               {
-                path: '/home/meetingManager',
+                path: '/meet/manager',
                 title: "会议管理",
                 icon: "el-icon-edit-outline",
               },
               {
-                path: '/home/meetingSearch',
+                path: '/meet/search',
                 title: "会议查询",
                 icon: "el-icon-edit-outline",
               }
             ]
           },
           {
-            path: "/home/process",
+            path: "/meet/process",
             title: "会议进程管理",
             icon:"el-icon-news",
             children: [
               {
-                path: '/home/meetingProcess',
+                path: '/meet/process',
                 title: "发起进程",
                 icon: "el-icon-edit-outline",
               }

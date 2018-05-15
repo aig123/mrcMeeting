@@ -3,68 +3,68 @@ import Router from 'vue-router'
 
 Vue.use(Router);
 const home = r => require.ensure([], () => r(require('@/pages/home')), 'home');
-const meetingApply = r => require.ensure([], () => r(require('@/pages/meetingApply')), 'meetingApply');
-const meetingApproval = r => require.ensure([], () => r(require('@/pages/meetingApproval')), 'meetingApproval');
-const meetingInfo = r => require.ensure([], () => r(require('@/pages/meetingInfo')), 'meetingInfo');
-const meetingManager = r => require.ensure([], () => r(require('@/pages/meetingManager')), 'meetingManager');
-const meetingProcess = r => require.ensure([], () => r(require('@/pages/meetingProcess')), 'meetingProcess');
-const meetingRoomManager = r => require.ensure([], () => r(require('@/pages/meetingRoomManager')), 'meetingRoomManager');
-const meetingSearch = r => require.ensure([], () => r(require('@/pages/meetingSearch')), 'meetingSearch');
-const myMeetingManager = r => require.ensure([], () => r(require('@/pages/myMeetingManager')), 'myMeetingManager');
+const apply = r => require.ensure([], () => r(require('@/pages/apply')), 'apply');
+const approval = r => require.ensure([], () => r(require('@/pages/approval')), 'approval');
+const appointment = r => require.ensure([], () => r(require('@/pages/appointment')), 'appointment');
+const manager = r => require.ensure([], () => r(require('@/pages/manager')), 'manager');
+const process = r => require.ensure([], () => r(require('@/pages/process')), 'process');
+const roomManager = r => require.ensure([], () => r(require('@/pages/roomManager')), 'roomManager');
+const search = r => require.ensure([], () => r(require('@/pages/search')), 'search');
+const myManager = r => require.ensure([], () => r(require('@/pages/myManager')), 'myManager');
 const routes = [
 
-  {path: '/', redirect: 'home/meetingApply'},
+  {path: '/', redirect: 'meet/apply'},
   {
-    path: '/home',
+    path: '/meet',
     component: home,
     name: '',
     children: [
       {
-        path: 'meetingApply',
-        name: "meetingApply",
-        component: meetingApply,
+        path: 'apply',
+        name: "apply",
+        component: apply,
         meta: [],
       },
       {
-        path: 'meetingApproval',
-        name: "meetingApproval",
-        component: meetingApproval,
+        path: 'approval',
+        name: "approval",
+        component: approval,
         meta: [],
       },
       {
-        path: 'meetingInfo',
-        name: "meetingInfo",
-        component: meetingInfo,
+        path: 'appointment',
+        name: "appointment",
+        component: appointment,
         meta: [],
       },
       {
-        path: 'meetingManager',
-        name: "meetingManager",
-        component: meetingManager,
+        path: 'manager',
+        name: "manager",
+        component: manager,
         meta: [],
       },
       {
-        path: 'meetingProcess',
-        name: "meetingProcess",
-        component: meetingProcess,
+        path: 'roomManager',
+        name: "roomManager",
+        component: roomManager,
         meta: [],
       },
       {
-        path: 'meetingRoomManager',
-        name: "meetingRoomManager",
-        component: meetingRoomManager,
+        path: 'process',
+        name: "process",
+        component: process,
         meta: [],
       },
       {
-        path: 'meetingSearch',
-        name: "meetingSearch",
-        component: meetingSearch,
+        path: 'search',
+        name: "search",
+        component: search,
         meta: [],
       },
       {
-        path: 'myMeetingManager',
-        name: "myMeetingManager",
-        component: myMeetingManager,
+        path: 'myManager',
+        name: "myManager",
+        component: myManager,
         meta: [],
       },
 
@@ -72,6 +72,5 @@ const routes = [
   }
 ]
 export default new Router({
-  routes,
-  strict: process.env.NODE_ENV !== 'production',
+  routes
 })
