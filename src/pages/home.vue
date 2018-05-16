@@ -39,11 +39,11 @@
             title: "会议室管理",
             icon:"el-icon-news",
             children: [
-              {
-                path: '/meet/approval',
-                title: "会议审批",
-                icon: "el-icon-edit-outline",
-              },
+              // {
+              //   path: '/meet/approval',
+              //   title: "会议审批",
+              //   icon: "el-icon-edit-outline",
+              // },
               {
                 path: '/meet/roomManager',
                 title: "会议室管理",
@@ -51,35 +51,35 @@
               }
             ]
           },
-          {
-            path: "/meet/yiti",
-            title: "会议及议题管理",
-            icon:"el-icon-news",
-            children: [
-              {
-                path: '/meet/manager',
-                title: "会议管理",
-                icon: "el-icon-edit-outline",
-              },
-              {
-                path: '/meet/search',
-                title: "会议查询",
-                icon: "el-icon-edit-outline",
-              }
-            ]
-          },
-          {
-            path: "/meet/process",
-            title: "会议进程管理",
-            icon:"el-icon-news",
-            children: [
-              {
-                path: '/meet/process',
-                title: "发起进程",
-                icon: "el-icon-edit-outline",
-              }
-            ]
-          }
+          // {
+          //   path: "/meet/yiti",
+          //   title: "会议及议题管理",
+          //   icon:"el-icon-news",
+          //   children: [
+          //     {
+          //       path: '/meet/manager',
+          //       title: "会议管理",
+          //       icon: "el-icon-edit-outline",
+          //     },
+          //     {
+          //       path: '/meet/search',
+          //       title: "会议查询",
+          //       icon: "el-icon-edit-outline",
+          //     }
+          //   ]
+          // },
+          // {
+          //   path: "/meet/process",
+          //   title: "会议进程管理",
+          //   icon:"el-icon-news",
+          //   children: [
+          //     {
+          //       path: '/meet/process',
+          //       title: "发起进程",
+          //       icon: "el-icon-edit-outline",
+          //     }
+          //   ]
+          // }
 
         ]
       }
