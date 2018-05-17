@@ -15,24 +15,15 @@
         </el-radio-group>
       </el-form-item>
       <el-form-item label="预定时间" prop="date">
-        <el-date-picker
-          v-model="form.date"
-          type="date"
-          placeholder="选择日期">
+        <el-date-picker v-model="form.date" type="date" placeholder="选择日期">
         </el-date-picker>
-        <el-time-select
-          placeholder="起始时间"
-          v-model="form.startTime"
-          :picker-options="{
+        <el-time-select placeholder="起始时间" v-model="form.startTime" :picker-options="{
       start: '08:30',
       step: '00:15',
       end: '18:30'
     }">
         </el-time-select>
-        <el-time-select
-          placeholder="结束时间"
-          v-model="form.endTime"
-          :picker-options="{
+        <el-time-select placeholder="结束时间" v-model="form.endTime" :picker-options="{
       start: '08:30',
       step: '00:15',
       end: '18:30',
@@ -55,34 +46,20 @@
         <el-button type="primary" size="small" @click="dialogVisible=true">选择人员</el-button>
       </el-form-item>
       <el-form-item label="会议主题" prop="classRoom">
-        <el-input
-          placeholder="请填写会议主题"
-          v-model="form.people">
+        <el-input placeholder="请填写会议主题" v-model="form.people">
         </el-input>
       </el-form-item>
       <el-form-item label="自动提醒" prop="classRoom">
-        <el-input
-          placeholder="统计单位：分钟/每次"
-          v-model="form.people" style="width: 100px;">
+        <el-input placeholder="统计单位：分钟/每次" v-model="form.people" style="width: 100px;">
         </el-input>
         <span>统计单位：分钟/每次</span>
       </el-form-item>
       <el-form-item label="会议内容" prop="classRoom">
-        <el-input
-          type="textarea"
-          :rows="2"
-          readonly
-          placeholder="请填写会议内容"
-          v-model="form.people" style="width: 100%;">
+        <el-input type="textarea" :rows="2" readonly placeholder="请填写会议内容" v-model="form.people" style="width: 100%;">
         </el-input>
       </el-form-item>
       <el-form-item label="会议资料" prop="classRoom">
-        <el-upload
-          class="upload-demo"
-          action="https://jsonplaceholder.typicode.com/posts/"
-          multiple
-          :limit="3"
-          :file-list="fileList">
+        <el-upload class="upload-demo" action="https://jsonplaceholder.typicode.com/posts/" multiple :limit="3" :file-list="fileList">
           <el-button size="small" type="primary">点击上传</el-button>
         </el-upload>
       </el-form-item>
@@ -92,313 +69,311 @@
       </el-form-item>
     </el-form>
 
-    <el-dialog
-      title="选择人员"
-      :visible.sync="dialogVisible1"
-      width="716px"
-    >
+    <el-dialog title="选择人员" :visible.sync="dialogVisible1" width="716px">
       <span>
-         <el-form :inline="true" :model="formInline" class="demo-form-inline">
+        <el-form :inline="true" :model="formInline" class="demo-form-inline">
 
-              <el-form-item label="部门">
-                   <el-select v-model="formInline.region" placeholder="部门">
-                  <el-option label="部门1" value="shanghai"></el-option>
-                  <el-option label="部门2" value="beijing"></el-option>
-                </el-select>
-              </el-form-item>
-            <el-form-item label="人员">
-                 <el-input v-model="formInline.user" placeholder="人员"></el-input>
-              </el-form-item>
-              <el-form-item>
-                 <el-button type="primary" @click="onSubmit">查询</el-button>
-               </el-form-item>
-          </el-form>
-           <el-transfer
-             v-model="value5"
-             :titles="['人员群体', '选中人员']"
-             :props="{key: 'value',label: 'desc' }"
-             :data="data3">
-          </el-transfer>
+          <el-form-item label="部门">
+            <el-select v-model="formInline.region" placeholder="部门">
+              <el-option label="部门1" value="shanghai"></el-option>
+              <el-option label="部门2" value="beijing"></el-option>
+            </el-select>
+          </el-form-item>
+          <el-form-item label="人员">
+            <el-input v-model="formInline.user" placeholder="人员"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary">查询</el-button>
+          </el-form-item>
+        </el-form>
+        <el-transfer v-model="value5" :titles="['人员群体', '选中人员']" :props="{key: 'value',label: 'desc' }" :data="data3">
+        </el-transfer>
       </span>
       <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+      </span>
     </el-dialog>
-    <el-dialog
-      title="选择人员"
-      :visible.sync="dialogVisible"
-      width="716px"
-    >
+    <el-dialog title="选择人员" :visible.sync="dialogVisible" width="716px">
       <span>
         <el-tabs type="card">
-              <el-tab-pane label="人员搜索">
-                <div style="max-height: 150px;overflow-y: auto;border: 1px solid #ebeef5;border-radius: 4px;"
-                     class="multiple-select">
-           <el-select
-             style="width: 100%"
-             v-model="value9"
-             multiple
-             filterable
-             remote
-             reserve-keyword
-             placeholder="请输入关键词"
-             :remote-method="remoteMethod"
-             :loading="loading">
-    <el-option
-      v-for="item in options4"
-      :key="item.value"
-      :label="item.label"
-      :value="item.value">
-    </el-option>
-  </el-select>
-        </div>
-                 <div style="border: 1px solid #ebeef5;border-radius: 4px;margin-top: 20px;width: 300px;float: left">
-                      <el-tree
-                        :data="data5"
-                        show-checkbox
-                        node-key="id"
-                        default-expand-all
-                        :expand-on-click-node="false">
-      <span class="custom-tree-node" slot-scope="{ node, data }">
-        <span> <i class="el-icon-tickets"></i>{{ node.label }} </span>
+          <el-tab-pane label="人员搜索">
+            <div style="max-height: 150px;overflow-y: auto;border: 1px solid #ebeef5;border-radius: 4px;" class="multiple-select">
+               <el-select v-model="value8" filterable multiple placeholder="请选择" style="width: 100%">
+                <el-option v-for="item in options" :key="item.id" :label="item.label" :value="item.id">
+                </el-option>
+              </el-select>
+            </div>
+            <div style="border: 1px solid #ebeef5;border-radius: 4px;margin-top: 20px;width: 300px;float: left">
+              <el-tree ref="tree2" @check="handleCheckChange" :data="data5" show-checkbox node-key="id" default-expand-all :expand-on-click-node="false">
+                <span class="custom-tree-node" slot-scope="{ node, data }">
+                  <span>
+                    <i class="el-icon-tickets"></i>{{ node.label }} </span>
+                </span>
+              </el-tree>
+            </div>
+            <div style="border: 1px solid rgb(235, 238, 245);border-radius: 4px;margin-top: 20px;width: 390px;float: left;margin-left: 5px;">
 
-      </span>
-    </el-tree>
-                 </div>
-                <div style="border: 1px solid rgb(235, 238, 245);border-radius: 4px;margin-top: 20px;width: 390px;float: left;margin-left: 5px;">
-asdf asdf
-                </div>
-              </el-tab-pane>
-              <el-tab-pane label="组织架构">
-                 <div style="max-height: 150px;overflow-y: auto;border: 1px solid #ebeef5;border-radius: 4px;"
-                      class="multiple-select">
-           <el-select
-             style="width: 100%"
-             v-model="value9"
-             multiple
-             filterable
-             remote
-             reserve-keyword
-             placeholder="请输入关键词"
-             :remote-method="remoteMethod"
-             :loading="loading">
-    <el-option
-      v-for="item in options4"
-      :key="item.value"
-      :label="item.label"
-      :value="item.value">
-    </el-option>
-  </el-select>
-        </div>
-                 <div style="border: 1px solid #ebeef5;border-radius: 4px;margin-top: 20px">
-                      <el-tree
-               :data="data5"
-               show-checkbox
-               node-key="id"
-               default-expand-all
-               :expand-on-click-node="false">
-      <span class="custom-tree-node" slot-scope="{ node, data }">
-        <span> <i class="el-icon-tickets"></i>{{ node.label }} </span>
-
-      </span>
-    </el-tree>
-                 </div>
-              </el-tab-pane>
+            </div>
+          </el-tab-pane>
+          <el-tab-pane label="组织架构">
+            <div style="max-height: 150px;overflow-y: auto;border: 1px solid #ebeef5;border-radius: 4px;" class="multiple-select">
+              <el-select v-model="value8" filterable multiple placeholder="请选择" style="width: 100%">
+                <el-option v-for="item in options" :key="item.id" :label="item.label" :value="item.id">
+                </el-option>
+              </el-select>
+            </div>
+            <div style="border: 1px solid #ebeef5;border-radius: 4px;margin-top: 20px">
+              <el-tree ref="tree2" @check="handleCheckChange" :data="data5" show-checkbox node-key="id" default-expand-all :expand-on-click-node="false">
+                <span class="custom-tree-node" slot-scope="{ node, data }">
+                  <span>
+                    <i class="el-icon-tickets"></i>{{ node.label }} </span>
+                </span>
+              </el-tree>
+            </div>
+          </el-tab-pane>
         </el-tabs>
-
-
       </span>
       <span slot="footer" class="dialog-footer">
-         <el-button @click="dialogVisible = false">清 空</el-button>
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-  </span>
+        <el-button @click="dialogVisible = false">清 空</el-button>
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+      </span>
     </el-dialog>
   </div>
 </template>
 
 <script>
-  export default {
+export default {
     data() {
-      const generateData3 = _ => {
-        const data = [];
-        for (let i = 1; i <= 15; i++) {
-          data.push({
-            value: i,
-            desc: `人员 ${ i }`,
-            disabled: i % 4 === 0
-          });
-        }
-        return data;
-      };
-      const data = [{
-        id: 1,
-        label: '一起大众有限责任公司',
-        children: [{
-          id: 4,
-          label: '二级 1-1',
-          children: [{
-            id: 9,
-            label: '三级 1-1-1'
-          }, {
-            id: 10,
-            label: '三级 1-1-2'
-          }]
-        }]
-      }, {
-        id: 2,
-        label: '研发部门',
-        children: [{
-          id: 5,
-          label: '王二'
-        }, {
-          id: 6,
-          label: '王3'
-        }]
-      }, {
-        id: 3,
-        label: '一级 3',
-        children: [{
-          id: 7,
-          label: '二级 3-1'
-        }, {
-          id: 8,
-          label: '二级 3-2'
-        }]
-      }];
-      return {
-        data4: JSON.parse(JSON.stringify(data)),
-        data5: JSON.parse(JSON.stringify(data)),
-        formInline: {
-          user: '',
-          region: ''
-        },
-        data3: generateData3(),
-        value5: [],
-        MeetingTypes: [{id: 1, name: "普通会议"}, {id: 2, name: "高级会议"}, {id: 3, name: "视频会议"}],
-        MeetingType: 1,
-        dialogVisible: false,
-        dialogVisible1: false,
-        form: {
-          MeetingType: 1,
-          applyType: 1,
-          endTime: "",
-          startTime: "",
-          classRoom: "1",
-          people: "",
-          name: '',
-          region: '',
-          date1: '',
-          date2: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: '',
-          value6: "",
-          date: ""
-        },
-        fileList: [],
-        options4: [],
-        value9: [],
-        list: [],
-        loading: false,
-        states: ["Alabama", "Alaska", "Arizona",
-          "Arkansas", "California", "Colorado",
-          "Connecticut", "Delaware", "Florida",
-          "Georgia", "Hawaii", "Idaho", "Illinois",
-          "Indiana", "Iowa", "Kansas", "Kentucky",
-          "Louisiana", "Maine", "Maryland",
-          "Massachusetts", "Michigan", "Minnesota",
-          "Mississippi", "Missouri", "Montana",
-          "Nebraska", "Nevada", "New Hampshire",
-          "New Jersey", "New Mexico", "New York",
-          "North Carolina", "North Dakota", "Ohio",
-          "Oklahoma", "Oregon", "Pennsylvania",
-          "Rhode Island", "South Carolina",
-          "South Dakota", "Tennessee", "Texas",
-          "Utah", "Vermont", "Virginia",
-          "Washington", "West Virginia", "Wisconsin",
-          "Wyoming"],
-      };
+        const generateData3 = _ => {
+            const data = [];
+            for (let i = 1; i <= 15; i++) {
+                data.push({
+                    value: i,
+                    desc: `人员 ${i}`,
+                    disabled: i % 4 === 0
+                });
+            }
+            return data;
+        };
+        const data = [
+            {
+                id: 1,
+                label: "一起大众有限责任公司",
+                children: [
+                    {
+                        id: 4,
+                        label: "产品部",
+                        children: [
+                            {
+                                id: 9,
+                                label: "王5"
+                            },
+                            {
+                                id: 10,
+                                label: "王6"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 2,
+                label: "研发部门",
+                children: [
+                    {
+                        id: 5,
+                        label: "王2"
+                    },
+                    {
+                        id: 6,
+                        label: "王3"
+                    }
+                ]
+            }
+        ];
+        return {
+            data4: JSON.parse(JSON.stringify(data)),
+            data5: JSON.parse(JSON.stringify(data)),
+            formInline: {
+                user: "",
+                region: ""
+            },
+            data3: generateData3(),
+            value5: [],
+            MeetingTypes: [
+                { id: 1, name: "普通会议" },
+                { id: 2, name: "高级会议" },
+                { id: 3, name: "视频会议" }
+            ],
+            MeetingType: 1,
+            dialogVisible: false,
+            dialogVisible1: false,
+            form: {
+                MeetingType: 1,
+                applyType: 1,
+                endTime: "",
+                startTime: "",
+                classRoom: "1",
+                people: "",
+                name: "",
+                region: "",
+                date1: "",
+                date2: "",
+                delivery: false,
+                type: [],
+                resource: "",
+                desc: "",
+                value6: "",
+                date: ""
+            },
+            fileList: [],
+            options4: [],
+            value9: [5, "6", "王5"],
+            list: [
+                {
+                    id: 9,
+                    label: "王5"
+                },
+                {
+                    id: 10,
+                    label: "王6"
+                },
+                {
+                    id: 5,
+                    label: "王2"
+                },
+                {
+                    id: 6,
+                    label: "王3"
+                }
+            ],
+            loading: false,
+            options: [
+                {
+                    id: 9,
+                    label: "王5"
+                },
+                {
+                    id: 10,
+                    label: "王6"
+                },
+                {
+                    id: 5,
+                    label: "王2"
+                },
+                {
+                    id: 6,
+                    label: "王3"
+                }
+            ],
+            value8: []
+        };
     },
     methods: {
-      submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-            alert('submit!');
-          } else {
-            console.log('error submit!!');
-            return false;
-          }
-        });
-      },
-      resetForm(formName) {
-        this.$refs[formName].resetFields();
-      },
-      handleRemove(file, fileList) {
-        console.log(file, fileList);
-      },
-      handlePreview(file) {
-        console.log(file);
-      },
-      handleExceed(files, fileList) {
-        this.$message.warning(`当前限制选择 3 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`);
-      },
-      beforeRemove(file, fileList) {
-        return this.$confirm(`确定移除 ${ file.name }？`);
-      },
-      remoteMethod(query) {
-        if (query !== '') {
-          this.loading = true;
-          setTimeout(() => {
-            this.loading = false;
-            this.options4 = this.list.filter(item => {
-              return item.label.toLowerCase()
-                .indexOf(query.toLowerCase()) > -1;
+        handleCheckChange(data, checked, indeterminate) {
+            this.value8 = [];
+            for (let key of this.$refs.tree2.getCheckedKeys()) {
+                for (let option of this.options) {
+                    if (key == option.id) {
+                        this.value8.push(key);
+                    }
+                }
+            }
+            //this.value8=this.$refs.tree2.getCheckedKeys()
+        },
+        submitForm(formName) {
+            this.$refs[formName].validate(valid => {
+                if (valid) {
+                    alert("submit!");
+                } else {
+                    console.log("error submit!!");
+                    return false;
+                }
             });
-          }, 200);
-        } else {
-          this.options4 = [];
+        },
+        resetForm(formName) {
+            this.$refs[formName].resetFields();
+        },
+        handleRemove(file, fileList) {
+            console.log(file, fileList);
+        },
+        handlePreview(file) {
+            console.log(file);
+        },
+        handleExceed(files, fileList) {
+            this.$message.warning(
+                `当前限制选择 3 个文件，本次选择了 ${
+                    files.length
+                } 个文件，共选择了 ${files.length + fileList.length} 个文件`
+            );
+        },
+        beforeRemove(file, fileList) {
+            return this.$confirm(`确定移除 ${file.name}？`);
+        },
+        remoteMethod(query) {
+            if (query !== "") {
+                this.loading = true;
+                setTimeout(() => {
+                    this.loading = false;
+                    this.options4 = this.list.filter(item => {
+                        return (
+                            item.label
+                                .toLowerCase()
+                                .indexOf(query.toLowerCase()) > -1
+                        );
+                    });
+                }, 200);
+            } else {
+                this.options4 = [];
+            }
         }
-      }
     },
-    mounted() {
-      this.list = this.states.map(item => {
-        return {value: item, label: item};
-      });
+    mounted() {},
+    watch: {
+        value8(curVal, oldVal) {
+            debugger;
+            this.$refs.tree2.setCheckedKeys(curVal);
+        }
     },
-  }
+    computed: {
+        checkData() {
+            console.log(this.$refs.tree.getCheckedNodes(), "------------dev");
+            return this.$refs.tree.getCheckedNodes();
+        }
+    }
+};
 </script>
 <style scoped>
-
-  .el-icon-warning { /*调整叹号和左侧文本框距离和图标颜色*/
+.el-icon-warning {
+    /*调整叹号和左侧文本框距离和图标颜色*/
     position: absolute;
     top: 12px;
     right: -24px;
     color: #e6a23c;
-  }
+}
 
-  .content {
+.content {
     padding: 20px;
-    max-width: 900px
-  }
+    max-width: 900px;
+}
 
-  .widthFull {
+.widthFull {
     width: 100%;
-  }
+}
 </style>
 <style>
-  .el-transfer-panel {
+.el-transfer-panel {
     width: 300px;
-  }
+}
 
-  .multiple-select input {
+.multiple-select input {
     border: 0;
-  }
+}
 
-  .el-select__tags > span {
+.el-select__tags > span {
     display: inline-block;
     width: auto;
-  }
+}
 </style>
