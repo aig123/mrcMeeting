@@ -1,0 +1,31 @@
+.searchForm .el-input__inner{border-radius:3px;}/*添加圆角*/
+.menu_right{top:0}
+#logoClick{position:absolute;top:0;left:170px;transition: all .5s}/*在标签内重新定义ID*/
+#menu_click{position: absolute;top:30px;left:7px;}/*在标签内重新定义ID*/
+#logo{margin-left: -20px;
+  position: absolute;
+  left: -130px;
+  top: 8px;
+  width: 80px;}/*在标签内重新定义ID*/
+#logoClick{position:absolute;top:0;left:170px;transition: all .5s}/*在标签内重新定义ID*/
+.on #menu_click{transform:rotate(90deg);-ms-transform:rotate(90deg);-moz-transform:rotate(90deg);-webkit-transform:rotate(90deg)}/*新定义样式-20180328*/
+#menu_click{transition: all .5s}/*在标签内重新定义ID*/
+.sys_con .sys_route{left:2px;}
+.on{left:12px !important;}
+.menu_right .listP .list .list_con ul{margin-top:0px;}
+.menu_right .listP .list .list_con ul li .cAccordion .ca_img .yellow.on{left:0 !important}
+.sys_con .sys_route_out{top:100px;}
+.sys_home .sys_header{height:100px; }
+.searchForm{margin-top: 50px;margin-left:0;margin-right:0px;border-radius:2px;}
+#logname{font-size: 14px}
+#department{position: absolute;top:26px;white-space: nowrap;}
+.sys_home .sys_header h4{line-height: 18px;margin-top:25px;font-size: 20px;font-weight: 500;letter-spacing: 2px;}
+.sys_home .sys_header h4 .sys_logo{top:22px;}
+.sys_home .sys_header h5.sys_user .sys_userPhoto{top:15px}
+.sys_home .sys_header h5.sys_user{padding-top:8px}
+.sys_home .sys_header h5 .sys_header_icon{top:20px}
+.sys_home .sys_header h5{top:6px !important;}
+.menu_right .listP .list{overflow-y: hidden;}
+.searchForm .searchForm--item:first-child{margin-left:10px;}
+#English{font-size: 8px;letter-spacing: -1px}
+hr{margin-top:16px;border:solid 0.5px #e7ecf1}

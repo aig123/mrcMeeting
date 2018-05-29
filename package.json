@@ -22,7 +22,7 @@
     "vue-echarts": "^3.0.7",
     "vue-full-calendar": "^2.5.2",
     "vue-fullcalendar": "^1.0.9",
-    "vue-mrc": "^1.0.24",
+    "vue-mrc": "1.0.42",
     "vue-prismjs": "^1.2.0",
     "vue-router": "^3.0.1",
     "vue2-editor": "^2.4.2",

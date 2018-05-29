@@ -1,0 +1,14 @@
+.el-form {
+    .el-form-item__label {
+        padding-right: 0;
+        //line-height: 32px;
+        &:after {content: '：';}
+    }
+    /*.el-form-item__content {line-height: 32px;}*/
+}
+.dialog--detail {
+    .el-form-item {
+        margin-top: 10px; margin-bottom: 0;
+        &:first-child {margin-top: 0;}
+    }
+}

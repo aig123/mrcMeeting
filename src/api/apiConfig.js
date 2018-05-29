@@ -1,7 +1,7 @@
 export default {
 	baseURL: process.env.BASE_URL,
-	headers: {'Content-Type':'application/json'},
-	onUploadProgress: function (progressEvent) {
+  headers: {'Content-Type':'application/json','authorization':"Basic YWlndWFuZw==:QWlndWFuZyFAIw=="},
+  onUploadProgress: function (progressEvent) {
 	    // Do whatever you want with the native progress event
 	},
 	onDownloadProgress: function (progressEvent) {

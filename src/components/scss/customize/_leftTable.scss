@@ -1,0 +1,10 @@
+.leftTable {
+    position: absolute; top: 0; left: 0;
+    width: 201px;
+    .el-table__header {
+        th {
+            background-color: $primary;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+/* search form desigin */
+.searchForm {
+    margin: -10px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: $space;
+    //background: linear-gradient(to right, $primary, #c6beee);
+    background: #f1f2f3;/*重新修改背景颜色-20180328*/
+    *zoom: 1;
+  border:solid 1px #d6dbdc;/*新增文本框内元素样式-20180329*/
+  border-radius:4px;/*新增文本框内元素样式-20180329*/
+  margin:0 2px;/*新增文本框内元素样式-20180329*/
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden;
+        height: 0;
+    }
+    .searchForm--item {
+        float: left;
+        margin-left: $space;
+        &:first-child {margin-left: 0;}
+    }
+    .searchForm--item__label,
+    .searchForm--item__content {
+        display: inline-block;
+        //vertical-align: top;
+    }
+    .searchForm--item__label {
+        //color: #fff;
+        //line-height: 32px;
+        &:after {content: '：';}
+    }
+    //.el-input__inner {
+    //    /*border-radius: 30px;*//*取消文本框圆角样式-20180328*/
+    //    border-color: rgba(216,221,223, 0.5);
+    //    background-color: rgba(255,255,255,1);
+    //    color: #aeb6bb;//
+    //    &::-webkit-input-placeholder {color: #aeb6bb;}/*修改文本框placeholder文本颜色-20180328*/
+    //}
+    //.el-input.is-focus .el-input__inner,
+    //.el-input__inner:focus,
+    //.el-input__inner:hover {border-color: #00529c;}
+    .el-input__suffix i:before {color: #fff; cursor: pointer;}
+    .searchForm--button {float: right; font-size: 0; line-height: 0;}
+}
+//.el-input__inner:focus{border-color: #00529c;}/*文本框获取焦点边框颜色-20180328*/
+//.el-input__inner:focus{color: #00529c;}/*文本框内文本颜色-20180328*/
+.el-input__suffix i:before {color: #fff; cursor: move;}
+.searchForm--button {float: right; font-size: 0; line-height: 0;}
+.searchForm .searchForm--item:first-child{margin-left:10px;}
+

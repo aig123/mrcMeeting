@@ -1,7 +1,7 @@
 <template>
   <div class="sys_home">
     <div class="sys_home_parent">
-      <hh-index-app :menuListData="menu"></hh-index-app>
+      <hh-index-app :menuListData="menu" :uniqueOpened="false"> </hh-index-app>
       <hh-index-tab  ref="mainContent"></hh-index-tab>
     </div>
   </div>

@@ -1,0 +1,64 @@
+// 写这段代码的时候，只有上帝和我知道它是干嘛的 => 现在，只有上帝知道;
+//      ┌─┐       ┌─┐
+//   ┌──┘ ┴───────┘ ┴──┐
+//   │                 │
+//   │       ───       │
+//   ███████───███████ │
+//   │                 │
+//   │       ─┴─       │
+//   └───┐         ┌───┘
+//       │         │ 神兽保佑,代码无BUG;
+//       │         └──────────────┐
+//       │                        ├─┐ Here be dragons;
+//       │                        ┌─┘ 前方高能;
+//       └─┐  ┐  ┌───────┬──┐  ┌──┘
+//         │ ─┤ ─┤       │ ─┤ ─┤
+//         └──┴──┘       └──┴──┘
+
+// 修改ele 主题
+$--color-primary:rgb(0,82,156);
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+@import "~element-ui/packages/theme-chalk/src/index";
+
+// common
+@import './element-white/_config.scss';
+@import './_tools.scss';
+// element ui
+//@import './element/_buttons.scss';
+@import './element-white/_tabs.scss';
+@import './element-white/_table.scss';
+//@import './element/_select.scss';
+//@import './element/_input.scss';
+@import './element-white/_dialog.scss';
+@import './element-white/_message-box.scss';
+@import './element-white/_notification.scss';
+@import './element-white/_form.scss';
+@import './element-white/_alert.scss';
+
+// customize
+@import './element-white/_search.scss';
+@import './customize/_leftTable.scss';
+@import './customize/_headline.scss';
+@import './customize/_comment.scss';
+
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+body {
+    background: #fff;
+    color: $text;
+    font-size: 14px;
+    font-family: 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'SimSun', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+input[type="number"] {box-shadow: none;}
+.contents {height: 100%;}
+
+
+.mt {margin-top: $space}
+.mr {margin-right: $space}
+.mb {margin-bottom: $space}
+.ml {margin-left: $space}
+
+.pl210 {padding-left: 210px;}

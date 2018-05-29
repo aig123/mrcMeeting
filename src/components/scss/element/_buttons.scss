@@ -1,0 +1,54 @@
+/* element ui buttons */
+.el-button--primary {@include elBtn($primary);}
+.el-button--warning {@include elBtn($warning);}
+.el-button+.el-button {margin-left: $space-s;}
+/* 普通功能按钮样式 */
+.el-button {
+    padding: 9px 15px !important;
+    border-radius: 20px;
+    font-size: 12px;
+    &.is-disabled {
+        border-color: $border !important;
+        background-color: #eee !important;
+        color: #999 !important;
+    }
+    &.el-button--mini {
+        padding: 7px 15px !important;
+        border-radius: 15px;
+    }
+}
+/* 内部功能按钮样式 */
+.el-table {
+    .el-button {
+        padding: 7px 15px !important;
+        border-radius: 15px;
+        &:active, &:focus, &:hover {
+            border-color: #409eff;
+            background-color: #fff;
+            outline: 0;
+            color: #409eff;
+        }
+        &.el-button--danger {
+            border-color: #fbc4c4;
+            background-color: #fef0f0;
+            color: #f56c6c;
+            &:active, &:focus, &:hover {
+                border-color: #f56c6c;
+                background-color: #f56c6c;
+                outline: 0;
+                color: #fff;
+            }
+        }
+        &.el-button--success {
+            border-color: #c2e7b0;
+            background-color: #f0f9eb;
+            color: #67c23a;
+            &:active, &:focus, &:hover {
+                border-color: #67c23a;
+                background-color: #67c23a;
+                outline: 0;
+                color: #fff;
+            }
+        }
+    }
+}

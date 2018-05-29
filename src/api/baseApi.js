@@ -24,7 +24,11 @@ axios.interceptors.response.use(
     }
     );
 export default {
-  post (url, param){
+  post (url, param,method){
+    if(method){
+      config.headers['nd-method']=method
+    }
+    console.log(config);
     return axios.post(url, param?param:{}, config);
    // return apiPost(url,param)
 

@@ -1,0 +1,112 @@
+/* 其他模块使用 */
+.comment--point {
+    height: 32px;
+    color: $text-regular;
+    line-height: 32px;
+    i {margin-right: $space-s; font-size: 16px;}
+    strong {margin: 0 $space 0 $space-s; color: $text; font-size: 16px;}
+}
+
+.comment {
+    @include comHeight(42px);
+    overflow-y: auto;
+    padding: $space;
+    background-color: $border-light;
+    .comment--item {
+        position: relative;
+        padding-left: 80px;
+        & + .comment--item {margin-top: $space;}
+    }
+    .comment--item__time {
+        position: absolute; top: 0; left: 0;
+        width: 60px;
+        padding-left: 20px;
+        text-align: center;
+        .comment--item__year {font-size: 16px;}
+        .comment--item__date {}
+        &:after {
+            content: '';
+            position: absolute; top: 3px; left: 0;
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            background-color: $primary;
+        }
+    }
+    .comment--item__contents {
+        padding: $space;
+        border-radius: 8px;
+        background-color: #fff;
+        transition: all 0.5s;
+        & + .comment--item__contents {margin-top: $space;}
+        &:hover {
+            box-shadow: 0 0 $space $primary;
+        }
+    }
+    .comment--row {
+        display: table;
+        width: 100%;
+        & + .comment--row {margin-top: $space-s;}
+    }
+    .comment--row__label {
+        display: table-cell;
+        width: 75px;
+        text-align: right;
+        &:after {content: '：';}
+    }
+    .comment--row__text {
+        display: table-cell;
+        word-break: break-all;
+        color: $text-regular;
+    }
+    .comment--radius {
+        *zoom: 1;
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+            overflow: hidden;
+            visibility: hidden;
+            height: 0;
+        }
+    }
+    .comment--radius__info {
+        float: left;
+        padding: $space-s;
+        border-radius: 8px;
+        background-color: $border-light;
+        & + .comment--radius__info {margin-left: $space;}
+    }
+    .comment--radius__label {
+        display: inline-block;
+        &:after {content: '：';}
+    }
+    .comment--radius__text {
+        display: inline-block;
+        color: $text-regular;
+    }
+    .comment--subtitle {
+        margin: $space 0;
+        font-weight: bold;
+        line-height: 32px;
+    }
+    .comment--list__title {
+        margin: (-$space); margin-top: $space;
+        padding: $space-s $space;
+        border-top: 1px solid #fff;
+        font-weight: bold;
+        line-height: 32px;
+        cursor: pointer;
+        i {
+            float: right;
+            width: 32px; height: 32px;
+            color: $text-secondary;
+            line-height: 32px;
+            text-align: center;
+        }
+        &:hover {
+            border-color: $border;
+            border-radius: 0 0 8px 8px;
+            background-color: $border-extra-light;
+        }
+    }
+}

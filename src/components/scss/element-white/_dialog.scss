@@ -1,0 +1,42 @@
+/* element ui dialog */
+.el-dialog {
+    overflow: hidden;
+    border-radius: 6px;
+    background: none;
+    &.autoHeight {
+        .el-dialog__body {
+          max-height: 500px;
+        }
+    }
+    .el-dialog__header {
+        position: relative;
+        padding: $space;
+        background-color: $primary;
+        color: #fff;
+        .el-dialog__title {color: #fff; font-weight: normal; font-size: 14px; line-height: 21px;}
+        .el-dialog__headerbtn {
+            float: none;
+            position: absolute; top: 50%; right: $space;
+            width: 16px; height: 16px;
+            margin-top: -8px;
+            line-height: 16px;
+            .el-icon-close:before {
+                content: '\E62C';
+                color: #fff;
+            }
+        }
+    }
+    .el-dialog__body {
+        overflow-y: auto;
+        max-height: 500px;
+        padding: $space;
+        background: #fff;
+    }
+    .el-dialog__footer {
+        padding: $space-s;
+        border-top: 1px solid $border;
+        background: #e2e6e7;
+        font: 0/0 none;
+    }
+
+}
